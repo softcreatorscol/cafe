@@ -621,7 +621,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       '<div class="prod-img"><span class="badge">'+L.num+'</span><span class="peso">500 g</span><div class="blob b1"></div><div class="blob b2"></div><div class="circulo">'+taza+'</div></div>'+
       '<div class="prod-body"><h3>Café '+esc(L.nombre)+'</h3><p>'+esc(L.corta)+'</p>'+
       '<div class="seg" role="radiogroup" aria-label="Presentación de café '+esc(L.nombre)+'"><button type="button" role="radio" aria-checked="true" data-tipo="Grano">En grano</button><button type="button" role="radio" aria-checked="false" data-tipo="Molido">Molido</button></div>'+
-      '<div class="prod-pie"><span class="precio">'+cop(L.precio)+'<small>Bolsa 500 g</small></span><button type="button" class="mas">+ Carrito</button></div></div></article>';
+      '<div class="prod-pie"><span class="precio">'+cop(L.precio)+'<small>Bolsa 500 g</small></span><button type="button" class="mas">Agregar</button></div></div></article>';
   }).join('');
 
   var carro=[];
@@ -643,7 +643,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       guardar();pintarCarro();
       mas.classList.remove('ok');void mas.offsetWidth;mas.classList.add('ok');
       var cb=document.getElementById('abrir-carro');cb.classList.remove('salta');void cb.offsetWidth;cb.classList.add('salta');
-      toast('Café '+LINEAS[id].nombre+' '+tipo.toLowerCase()+' agregado');
+      abrir();
     });
   });
 
